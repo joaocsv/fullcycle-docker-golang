@@ -6,8 +6,6 @@ COPY ./entry-point-docker.go .
 
 RUN go build entry-point-docker.go && rm entry-point-docker.go
 
-ENTRYPOINT [ "./entry-point-docker" ]
-
 FROM scratch
 
 COPY --from=builder /app/src/ .
